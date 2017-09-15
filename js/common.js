@@ -4,7 +4,7 @@ $(function() {
 	const MAX_STARS = 5;
 	const DEFAULT_STAR_COLOR = '#b3b3b3';
 	const MY_URL = 'https://promo.fabiohome.ru/test'; 
-	const PROXY = '';
+	const PROXY = 'https://cors-anywhere.herokuapp.com/';
 
 	function GetRates()
 	{
