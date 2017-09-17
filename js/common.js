@@ -10,21 +10,13 @@ $(function() {
 	{
 		if($(".rating").length != 0)
 			$(".rating").remove();
-			
-			
-		jQuery.support.cors = true;
+
 		$.ajax({ 
-			url: MY_URL,
+			url: PROXY + MY_URL, 
 			type: 'POST',
-			dataType:"json",
 			data: GetAjaxParam(),
-			crossDomain: true,
-			xhrFields: {
-				withCredentials: true
-			 },
-			success: setDataToPage,
-			error : function(jqXHR, textStatus, ex) {
-				console.log(textStatus + "," + ex);}
+			dataType: 'json',
+			success: setDataToPage
 		});
 	}
 
