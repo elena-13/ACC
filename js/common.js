@@ -11,12 +11,20 @@ $(function() {
 		if($(".rating").length != 0)
 			$(".rating").remove();
 			
+			
+		jQuery.support.cors = true;
 		$.ajax({ 
-			url: PROXY + MY_URL, 
+			url: MY_URL,
 			type: 'POST',
+			dataType:"json",
 			data: GetAjaxParam(),
-			dataType: 'json',
-			success: setDataToPage
+			crossDomain: true,
+			xhrFields: {
+				withCredentials: true
+			 },
+			success: setDataToPage,
+			error : function(jqXHR, textStatus, ex) {
+				console.log(textStatus + "," + ex);}
 		});
 	}
 
