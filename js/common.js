@@ -57,7 +57,7 @@ $(function() {
 		var days =  GetDays(activeMonth);
 		var marked = data.map(function(obj){return (new Date(obj.data))});
 		var dateIdx = 0;
-		for(var i=0; i<= days.length; ++i)
+		for(var i=0; i< days.length; ++i)
 		{
 			if(dateIdx >= marked.length)
 				return;
